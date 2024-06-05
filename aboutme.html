@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grexy || About Me Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:rgb(123, 36, 28);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            max-height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .intro-video {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .text-box {
+            background-color: #ffebcd;
+            border: 2px solid rgb(123, 36, 28);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            position: relative;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (min-width: 600px) {
+            nav {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="image/logo.png"width="84" height="100"><br></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Want to know more about me? Come here and watch my video!</h2>
+            <div class="intro-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eWRnuMbah-A?si=fK3T9uNsMqhXn6IV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="image/myself2.jpg" style="width:100%">
+                </div>
+                <div class="slides">
+                    <img src="image/myself5.jpg" style="width:100%">
+                </div>
+                <div class="slides">
+                    <img src="image/myself4.jpg" style="width:100%">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+
+            <div class="text-box" id="text-box">
+                <p>Loading about me...</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grexymine. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Automatic Slideshow - Change image every 2 seconds
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+
+        // Automatic Text Generator
+        const sentences = [
+            "Hello! My name is Nor Kamillah, and I'm a student at UiTM Kedah.",
+            "I enjoy cooking and trying out new recipes in my free time.",
+            "I love some calmness and quiet place because that's where I seek the sanity of mind.",
+            "Reading books is a hobby that I cherish. Fiction is my favorite genre.",
+            "Psychology is one of the coolest subject and I enjoy my time learning it as a fun activity.",
+            "Photography is another hobby of mine, capturing moments is what I love especially sunsets."
+        ];
+        let sentenceIndex = 0;
+
+        function typeSentence() {
+            const textBox = document.getElementById('text-box');
+            textBox.innerHTML = `<p>${sentences[sentenceIndex]}</p>`;
+            sentenceIndex = (sentenceIndex + 1) % sentences.length;
+            setTimeout(typeSentence, 5000); // Change sentence every 1 seconds
+        }
+
+        document.addEventListener("DOMContentLoaded", typeSentence);
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grexy || Family Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:rgb(123, 36, 28);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            max-height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .family {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .member {
+            width: 45%;
+            margin: 10px 0;
+            perspective: 1000px;
+        }
+
+        .member-inner {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* Aspect ratio */
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .member:hover .member-inner {
+            transform: rotateY(180deg);
+        }
+
+        .member-front, .member-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-front {
+            background: #fff;
+        }
+
+        .member-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .member-back {
+            background:#E6B0AA;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (min-width: 600px) {
+            nav {
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .member {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>        
+        <a href="index.html"><img src="image/logo.png"width="84" height="100"><br></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="family">
+            <h2>My Beloved Family :)</h2>
+            <div class="family">
+                <div class="member">
+                    <div class="member-inner">
+                        <div class="member-front">
+                            <img src="image/father.jpg" alt="Family Member 1">
+                        </div>
+                        <div class="member-back">
+                            <p>"My father is my guiding star, whose wisdom and kindness illuminate my path. His unwavering support and boundless love have shaped me into the person I am today. A pillar of strength and a source of inspiration, he is my greatest hero and my most cherished mentor."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-inner">
+                        <div class="member-front">
+                            <img src="image/mother.jpg" alt="Family Member 2">
+                        </div>
+                        <div class="member-back">
+                            <p>"My mother is the heart of our family, whose nurturing spirit and unconditional love envelop us in warmth. Her endless patience and gentle guidance have been my foundation. A beacon of compassion and resilience, she is my greatest confidante and my most cherished role model."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-inner">
+                        <div class="member-front">
+                            <img src="image/brother3.2.jpg" alt="Family Member 3">
+                        </div>
+                        <div class="member-back">
+                            <p>"My older brother is my steadfast protector and my first friend. His strength and sense of adventure have always inspired me. With his guidance and unwavering support, he has been both a mentor and a role model, helping me navigate life's challenges with confidence."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-inner">
+                        <div class="member-front">
+                            <img src="image/myself6.jpg" alt="Family Member 4">
+                        </div>
+                        <div class="member-back">
+                            <p>"I am a dedicated and curious individual, always eager to learn and grow. My journey through education has been marked by hard work, resilience, and a passion for discovery. I value the friendships and experiences that have shaped me, and I am committed to making a meaningful impact in my chosen field."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-inner">
+                        <div class="member-front">
+                            <img src="image/brother2.jpg" alt="Family Member 5">
+                        </div>
+                        <div class="member-back">
+                            <p>"My second younger brother is a source of joy and creativity in our family. His vibrant imagination and infectious enthusiasm inspire everyone around him. With a curious mind and a kind heart, he brings laughter and light into our lives, always ready to explore new adventures."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member">
+                    <div class="member-inner">
+                        <div class="member-front">
+                            <img src="image/brother.jpg" alt="Family Member 6">
+                        </div>
+                        <div class="member-back">
+                            <p>"My younger brother is the spark of energy and optimism in our family. His cheerful spirit and boundless curiosity keep us all on our toes. With his quick wit and compassionate nature, he brings joy and warmth to every moment, making our family complete."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grexymine. All rights reserved.</p>
+    </footer>
+</body>
+</html>

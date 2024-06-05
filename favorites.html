@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grexy || Favorites Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:rgb(123, 36, 28);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            max-height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .favorite-item {
+            display: none;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .envelope {
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .envelope img {
+            width: 300px;
+        }
+
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+
+        .letter {
+            display: none;
+            background-color:#D98880;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (min-width: 600px) {
+            nav {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <script>
+        function showFavorite(id) {
+            document.querySelectorAll('.favorite-item').forEach(item => {
+                item.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function openLetter(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeLetter(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="image/logo.png"width="83" height="83"><br></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="favorites">
+            <h2>The Color to My Blank Canvas, My Favorites (Click on the picture)</h2>
+            <div class="dropdown">
+                <button class="dropbtn">Select Here</button>
+                <div class="dropdown-content">
+                    <a href="javascript:void(0)" onclick="showFavorite('favorite1')">season</a>
+                    <a href="javascript:void(0)" onclick="showFavorite('favorite2')">songs</a>
+                    <a href="javascript:void(0)" onclick="showFavorite('favorite3')">person</a>
+                </div>
+            </div>
+
+            <div id="favorite1" class="favorite-item">
+                <div class="envelope" onclick="openLetter('letter1')">
+                    <img src="image/winter.jpg" alt="Favorite 1">
+                </div>
+                <div id="letter1" class="letter">
+                    <button class="close-btn" onclick="closeLetter('letter1')">&times;</button>
+                    <h3>My Kind Of Season.</h3>
+                    <p>Winter brings a magical charm to everything around us. It covers the world in a soft, white blanket of snow, making everything look peaceful and serene. The air feels crisp and fresh, and you can hear the gentle sound of snowflakes falling. Trees look like they're wearing sparkling icicles, and windows become frosted with delicate patterns. It's a time when things slow down, inviting us to pause and appreciate the beauty of the season.</p>
+                </div>
+            </div>
+
+            <div id="favorite2" class="favorite-item">
+                <div class="envelope" onclick="openLetter('letter2')">
+                    <img src="image/songs.jpg" alt="Favorite 2">
+                </div>
+                <div id="letter2" class="letter">
+                    <button class="close-btn" onclick="closeLetter('letter2')">&times;</button>
+                    <h3>My Mood? This masterpiece right here.</h3>
+                    <p>"Blood, Sweat & Tears" by BTS is more than just a song; it's a mesmerizing journey through emotions and beats. With its captivating melody and powerful lyrics, it tells a story of passion, perseverance, and the pursuit of dreams. Each note carries an energy that resonates deep within, while the lyrics speak of the struggles and sacrifices made on the path to success. From the haunting vocals to the dynamic rap verses, the song is a masterpiece of sound and storytelling, leaving a lasting impression on all who listen.</p>
+                </div>
+            </div>
+
+            <div id="favorite3" class="favorite-item">
+                <div class="envelope" onclick="openLetter('letter3')">
+                    <img src="image/pabo6.jpg" alt="Favorite 3">
+                </div>
+                <div id="letter3" class="letter">
+                    <button class="close-btn" onclick="closeLetter('letter3')">&times;</button>
+                    <h3>This one? What kind of favorite? IYKYK hekhek...</h3>
+                    <p>My man? He's like the guy version of me, my partner in crime, and sometimes my stinky enemy, but also a bit of a playful kid. We're like two peas in a pod, always getting into mischief together and laughing until our sides ache. But don't let that fool you; there's a whole world of secrets between us, like inside jokes and shared dreams. He's the one who knows me better than anyone else, and together, we're a dynamic duo, causing trouble and having fun wherever we go.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grexymine. All rights reserved.</p>
+    </footer>
+</body>
+</html>

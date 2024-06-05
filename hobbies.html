@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grexy || Hobbies Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:rgb(123, 36, 28);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            max-height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .hobby {
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hobby-img {
+            width: 100%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .hobby:hover .hobby-img {
+            transform: translateX(100%);
+        }
+
+        .hobby-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            width: 100%;
+            transform: translateX(-100%);
+            transition: transform 1s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .hobby:hover .hobby-content {
+            transform: translateX(0);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (min-width: 600px) {
+            nav {
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .hobby {
+                display: flex;
+                align-items: center;
+            }
+
+            .hobby-img {
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+
+            .hobby-content {
+                flex: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="image/logo.png"width="83" height="83"><br></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="aboutme.html">About Me</a>
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="hobbies">
+            <h2>My Fantasy World a.k.a My Hobbies ;)</h2>
+            <div class="hobby">
+                <img class="hobby-img" src="image/music.jpg" alt="Hobby 1">
+                <div class="hobby-content">
+                    <h3>Listening to the music.</h3>
+                    <p>Immersed in the melodies and rhythms, I find solace and inspiration in the world of music. Whether it's the soothing tunes of acoustic ballads or the electrifying beats of rock anthems, each song becomes a soundtrack to moments in my life. From uplifting melodies that lift my spirits to soulful lyrics that resonate deeply within, music is more than just a hobby; it's a journey of emotions, memories, and endless discoveries.</p>
+                </div>
+            </div>
+            <div class="hobby">
+                <img class="hobby-img" src="image/wattpad.jpg" alt="Hobby 2">
+                <div class="hobby-content">
+                    <h3>Reading Wattpad.</h3>
+                    <p>Lost in the digital pages of Wattpad, I embark on literary adventures that transport me to distant worlds and alternative realities. From romance to fantasy, mystery to sci-fi, the platform offers a treasure trove of stories waiting to be explored. With each chapter, I delve deeper into captivating plots, empathizing with characters and experiencing their triumphs and tribulations. Wattpad isn't just a source of entertainment; it's a community of writers and readers, sharing their creativity and passion for storytelling.</p>
+                </div>
+            </div>
+            <div class="hobby">
+                <img class="hobby-img" src="image/writing.jpg" alt="Hobby 3">
+                <div class="hobby-content">
+                    <h3>Writing some good stories or poems.</h3>
+                    <p>With pen in hand and imagination ablaze, I embark on a journey of creative expression through writing. Whether crafting intricate plots for gripping narratives or weaving words into poignant poems, I find joy in giving voice to my thoughts and emotions. Writing is not only a means of self-expression but also a form of therapy, allowing me to explore complex ideas and reflect on life's intricacies. Each story or poem is a labor of love, a testament to the power of words to inspire, provoke, and evoke profound emotions.</p>
+                </div>
+            </div>
+            <!-- Add more hobbies here -->
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grexymine. All rights reserved.</p>
+    </footer>
+</body>
+</html>

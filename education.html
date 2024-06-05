@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grexy || Education Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:rgb(123, 36, 28);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .course {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .course img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .course h2 {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .course {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+        }
+
+        @media (min-width: 900px) {
+            nav {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>~My Education Journey~</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="friends.html">Friends</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+    <div class="container">
+        <div class="course">
+            <img src="image/tabika.jpg" alt="Course 1">
+            <h2>Cherished Beginnings at Tabika Kemas: A Playground of Joy</h2>
+            <p>Imagine a place where the walls are painted with the colors of joy and every corner is filled with laughter and wonder. This was Tabika Kemas, the magical garden where your educational journey began, and where every day was an adventure full of fun and discovery. Mornings at Tabika Kemas were always a burst of excitement. As the sun peeked over the horizon, you and your friends would gather, eager to embark on the day’s adventures. Whether it was finger painting masterpieces or building castles with blocks, every activity was a chance to create and explore.</p>
+        </div>
+        <div class="course">
+            <img src="image/primary.jpg" alt="Course 2">
+            <h2>A Journey Through SK Pelabuhan: Where Learning Set Sail</h2>
+            <p>Imagine a school nestled near the vibrant hum of a bustling port, where the scent of the sea breeze mingles with the excitement of young minds eager to learn. This is SK Pelabuhan, a place where education was not just about books and classrooms, but about adventures and discoveries. SK Pelabuhan wasn’t just about academics; it was about learning life’s lessons. School trips to the nearby harbor taught us about the importance of community and hard work, while environmental projects made us stewards of our beautiful coastline. We learned to care for our surroundings and to appreciate the delicate balance of nature.</p>
+        </div>
+        <div class="course">
+            <img src="image/secondary.jpg" alt="Course 3">
+            <h2>Unforgettable Years at SMK Pelabuhan: A Journey of Growth and Friendship</h2>
+            <p>As the sun rose each day over SMK Pelabuhan, it cast a golden hue over the school grounds, welcoming you to a place where your teenage years would unfold into a tapestry of rich experiences and cherished memories. Among the most precious gifts of SMK Pelabuhan were the friendships you formed. These were the friends who laughed with you, shared your dreams, and stood by you through thick and thin. Together, you navigated the ups and downs of teenage life, finding joy in shared experiences and comfort in each other’s support. As the SPM exams approached, the intensity of your studies increased. Late-night study sessions, group revisions, and endless practice papers became the norm. Despite the pressure, there was a sense of camaraderie as you and your friends tackled this pivotal challenge together, encouraging and helping each other to stay focused and motivated.</p>
+        </div>
+        <div class="course">
+            <img src="image/uitm.jpg" alt="Course 4">
+            <h2>Adventures in Learning at UiTM Kedah: Crafting a Future in Library Informatics</h2>
+            <p>The journey through higher education is often a defining chapter in one’s life, and at UiTM Kedah, this journey is nothing short of remarkable. As a diploma student in Library Informatics, I am navigating a world where technology meets tradition, and every day is filled with opportunities to grow and discover. Library Informatics, my chosen field, is a fascinating blend of information science and technology. Each lecture and practical session opens up new dimensions of understanding, from mastering digital cataloging systems to exploring the intricacies of information management. The curriculum is designed to equip me with the skills needed to navigate the ever-evolving landscape of libraries and information centers. My time at UiTM Kedah is not just about earning a diploma; it’s about building a foundation for my future. The knowledge and experiences gained here are shaping me into a well-rounded professional ready to take on the challenges of the modern information landscape. As I continue to explore the field of Library Informatics, I am preparing to contribute meaningfully to the world of information management and beyond.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Grexymine. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript to add animation effect
+        document.addEventListener('DOMContentLoaded', function() {
+            let courses = document.querySelectorAll('.course');
+            let options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            let callback = function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            let observer = new IntersectionObserver(callback, options);
+            courses.forEach(course => {
+                observer.observe(course);
+            });
+        });
+    </script>
+</body>
+</html>
